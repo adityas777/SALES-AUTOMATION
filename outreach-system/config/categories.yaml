@@ -1,0 +1,32 @@
+# Canonical category key -> Google search terms used for Places Text Search.
+# Add a category later = add a block here (+ a matching entry in templates.yaml
+# and media_library.yaml). No code change required.
+categories:
+  dance:
+    search_terms: ["dance academy", "dance studio", "dance classes"]
+  yoga:
+    search_terms: ["yoga studio", "yoga classes"]
+  gym_fitness:
+    search_terms: ["gym", "fitness center", "crossfit box"]
+  photography:
+    search_terms: ["photography studio", "photographer"]
+  music_recording:
+    search_terms: ["music school", "recording studio", "music academy"]
+  schools_colleges:
+    search_terms: ["school", "college", "coaching institute"]
+  sports:
+    search_terms: ["sports academy", "sports club", "cricket coaching"]
+  event_venues:
+    search_terms: ["banquet hall", "event venue", "auditorium", "marriage garden"]
+  cafes_restaurants:
+    search_terms: ["cafe", "restaurant"]
+  coworking:
+    search_terms: ["coworking space", "meeting room rental"]
+  art_studios:
+    search_terms: ["art studio", "pottery studio", "craft workshop"]
+  salons:
+    search_terms: ["salon", "spa"]
+  theatres:
+    search_terms: ["theatre", "drama school"]
+  activity_centres:
+    search_terms: ["activity center", "kids activity centre", "workshop space"]

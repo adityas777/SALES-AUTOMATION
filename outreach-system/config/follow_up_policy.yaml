@@ -1,0 +1,13 @@
+# Follow-up cadence - change freely, no code change needed.
+max_follow_ups: 3
+cadence_days: [3, 7, 14]     # days after previous contact, one entry per follow-up
+quiet_hours:
+  start: "21:00"
+  end: "09:00"
+stop_statuses:
+  - "Responded"
+  - "Interested"
+  - "Not Interested"
+  - "Opt-out"
+  - "Wrong Number"
+  - "Needs Human"

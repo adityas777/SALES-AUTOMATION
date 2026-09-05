@@ -1,0 +1,85 @@
+:root {
+  /* Black + gold, committed as one deliberate look rather than a light/dark pair */
+  --bg: #0b0a08;
+  --surface: #16130e;
+  --surface-2: #1e1a12;
+  --surface-3: #262015;
+  --border: #332c1d;
+  --border-strong: #4a4026;
+
+  --text: #f3ead9;
+  --text-muted: #b7a988;
+  --text-faint: #8a7d61;
+
+  --gold: #d4af37;
+  --gold-bright: #f4d97f;
+  --gold-deep: #9c7a1f;
+  --gold-gradient: linear-gradient(135deg, #f4d97f, #d4af37 55%, #a9791f);
+  --gold-soft: rgba(212, 175, 55, 0.14);
+  --gold-soft-strong: rgba(212, 175, 55, 0.24);
+
+  --success: #5fce8a;
+  --success-bg: rgba(95, 206, 138, 0.13);
+  --warning: #e8964a;
+  --warning-bg: rgba(232, 150, 74, 0.14);
+  --danger: #e2685f;
+  --danger-bg: rgba(226, 104, 95, 0.14);
+
+  --radius-sm: 8px;
+  --radius: 14px;
+  --radius-lg: 18px;
+
+  --shadow-sm: 0 1px 2px rgba(0, 0, 0, 0.4);
+  --shadow: 0 1px 3px rgba(0, 0, 0, 0.5), 0 10px 26px -12px rgba(0, 0, 0, 0.6);
+  --shadow-lg: 0 18px 40px -14px rgba(0, 0, 0, 0.75);
+  --shadow-gold: 0 8px 22px -6px rgba(212, 175, 55, 0.4);
+
+  --display: "Playfair Display", "Georgia", serif;
+  --sans: "Inter", system-ui, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+  color-scheme: dark;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html,
+body,
+#root {
+  height: 100%;
+}
+
+body {
+  margin: 0;
+  font-family: var(--sans);
+  background: var(--bg);
+  color: var(--text);
+  font-size: 14px;
+  -webkit-font-smoothing: antialiased;
+}
+
+button {
+  font-family: inherit;
+  font-size: inherit;
+  cursor: pointer;
+}
+
+input,
+select {
+  font-family: inherit;
+  font-size: inherit;
+}
+
+::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+}
+
+::-webkit-scrollbar-thumb {
+  background: var(--border-strong);
+  border-radius: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: transparent;
+}

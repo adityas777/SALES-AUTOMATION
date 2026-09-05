@@ -1,0 +1,188 @@
+.banner {
+  padding: 13px 16px;
+  border-radius: var(--radius-sm);
+  margin-bottom: 16px;
+  font-size: 13px;
+  font-weight: 500;
+}
+
+.banner-danger {
+  background: var(--danger-bg);
+  color: var(--danger);
+}
+
+.hint {
+  font-weight: 400;
+  color: var(--text-faint);
+  font-size: 12.5px;
+}
+
+.run-form {
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-lg);
+  box-shadow: var(--shadow);
+  padding: 28px;
+  max-width: 680px;
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+}
+
+.form-row {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.form-row label {
+  font-weight: 700;
+  font-size: 13px;
+  color: var(--text);
+}
+
+.form-row .hint {
+  font-weight: 400;
+  color: var(--text-faint);
+  font-size: 12px;
+  margin: -4px 0 0;
+}
+
+.form-row input[type="text"],
+.form-row select {
+  padding: 10px 14px;
+  border-radius: var(--radius-sm);
+  border: 1.5px solid var(--border);
+  background: var(--surface-2);
+  color: var(--text);
+  max-width: 340px;
+  font-size: 13.5px;
+  transition: border-color 0.15s ease, box-shadow 0.15s ease;
+}
+
+.form-row input[type="text"]::placeholder {
+  color: var(--text-faint);
+}
+
+.form-row input[type="text"]:focus,
+.form-row select:focus {
+  outline: none;
+  border-color: var(--gold);
+  box-shadow: 0 0 0 3px var(--gold-soft);
+}
+
+.category-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 10px 18px;
+}
+
+.category-checkbox {
+  display: flex;
+  align-items: center;
+  gap: 9px;
+  font-size: 13px;
+  font-weight: 500;
+  cursor: pointer;
+  color: var(--text);
+}
+
+.category-checkbox input[type="checkbox"] {
+  width: 15px;
+  height: 15px;
+  accent-color: var(--gold);
+}
+
+.btn {
+  border: none;
+  border-radius: var(--radius-sm);
+  padding: 11px 20px;
+  font-weight: 700;
+  font-size: 13.5px;
+  align-self: flex-start;
+  transition: transform 0.12s ease, box-shadow 0.12s ease, opacity 0.12s ease;
+}
+
+.btn-primary {
+  background: var(--gold-gradient);
+  color: #1a1305;
+  box-shadow: var(--shadow-gold);
+}
+
+.btn-primary:hover:not(:disabled) {
+  transform: translateY(-1px);
+  box-shadow: 0 10px 26px -6px rgba(212, 175, 55, 0.55);
+}
+
+.btn-primary:disabled {
+  opacity: 0.45;
+  cursor: not-allowed;
+  box-shadow: none;
+}
+
+.run-status {
+  margin-top: 22px;
+  max-width: 680px;
+  padding: 18px 22px;
+  border-radius: var(--radius);
+  border: 1px solid var(--border);
+  background: var(--surface);
+  box-shadow: var(--shadow);
+}
+
+.run-status-message {
+  font-size: 13px;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  flex-wrap: wrap;
+  color: var(--text);
+}
+
+.run-status-done .run-status-message {
+  color: var(--success);
+  font-weight: 600;
+}
+
+.run-status-failed .run-status-message {
+  color: var(--danger);
+  font-weight: 600;
+}
+
+.run-status-running {
+  border-color: var(--gold-deep);
+}
+
+.run-status-metrics {
+  display: flex;
+  gap: 22px;
+  margin-top: 12px;
+  font-size: 12.5px;
+  color: var(--text-muted);
+  font-weight: 500;
+  font-variant-numeric: tabular-nums;
+}
+
+.run-errors {
+  margin: 10px 0 0;
+  padding-left: 18px;
+  color: var(--danger);
+  font-size: 12px;
+}
+
+.spinner {
+  width: 14px;
+  height: 14px;
+  border: 2px solid var(--border);
+  border-top-color: var(--gold);
+  border-radius: 50%;
+  display: inline-block;
+  animation: spin 0.7s linear infinite;
+  flex-shrink: 0;
+}
+
+@keyframes spin {
+  to {
+    transform: rotate(360deg);
+  }
+}

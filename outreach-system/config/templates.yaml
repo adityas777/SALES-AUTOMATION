@@ -1,0 +1,137 @@
+# Category -> approved WhatsApp template + email template.
+#
+# IMPORTANT: `whatsapp.template_name` must match, character-for-character, a
+# template already APPROVED in Meta Business Manager. Creating a block here
+# does NOT create the WhatsApp template - submit it in Meta first, then wire
+# the name here. Until approved, leave use_whatsapp: false for that category
+# and outreach falls back to email-only.
+#
+# `email.body_template_path` points at an HTML file under templates/email/.
+# Personalization (groq_personalizer.py) fills {{business_name}}, {{category}},
+# {{city}} placeholders at send time.
+
+dance:
+  use_whatsapp: false
+  whatsapp:
+    template_name: "dance_academy_intro_v1"
+    language: "en"
+  email:
+    subject: "Grow {{business_name}}'s enrollments with a free 15-min demo"
+    body_template_path: "templates/email/dance.html"
+
+yoga:
+  use_whatsapp: false
+  whatsapp:
+    template_name: "yoga_studio_intro_v1"
+    language: "en"
+  email:
+    subject: "A quick idea to fill more mats at {{business_name}}"
+    body_template_path: "templates/email/yoga.html"
+
+gym_fitness:
+  use_whatsapp: false
+  whatsapp:
+    template_name: "gym_fitness_intro_v1"
+    language: "en"
+  email:
+    subject: "Helping {{business_name}} sign up more members in {{city}}"
+    body_template_path: "templates/email/gym_fitness.html"
+
+photography:
+  use_whatsapp: false
+  whatsapp:
+    template_name: "photography_intro_v1"
+    language: "en"
+  email:
+    subject: "A quick idea for {{business_name}}'s bookings"
+    body_template_path: "templates/email/photography.html"
+
+music_recording:
+  use_whatsapp: false
+  whatsapp:
+    template_name: "music_recording_intro_v1"
+    language: "en"
+  email:
+    subject: "Helping {{business_name}} reach more students/artists"
+    body_template_path: "templates/email/music_recording.html"
+
+schools_colleges:
+  use_whatsapp: false
+  whatsapp:
+    template_name: "schools_colleges_intro_v1"
+    language: "en"
+  email:
+    subject: "A quick idea for {{business_name}}'s admissions"
+    body_template_path: "templates/email/schools_colleges.html"
+
+sports:
+  use_whatsapp: false
+  whatsapp:
+    template_name: "sports_intro_v1"
+    language: "en"
+  email:
+    subject: "Helping {{business_name}} grow enrollments in {{city}}"
+    body_template_path: "templates/email/sports.html"
+
+event_venues:
+  use_whatsapp: false
+  whatsapp:
+    template_name: "event_venues_intro_v1"
+    language: "en"
+  email:
+    subject: "A quick idea to fill more dates at {{business_name}}"
+    body_template_path: "templates/email/event_venues.html"
+
+cafes_restaurants:
+  use_whatsapp: false
+  whatsapp:
+    template_name: "cafes_restaurants_intro_v1"
+    language: "en"
+  email:
+    subject: "Helping {{business_name}} bring in more regulars"
+    body_template_path: "templates/email/cafes_restaurants.html"
+
+coworking:
+  use_whatsapp: false
+  whatsapp:
+    template_name: "coworking_intro_v1"
+    language: "en"
+  email:
+    subject: "Filling more desks/rooms at {{business_name}}"
+    body_template_path: "templates/email/coworking.html"
+
+art_studios:
+  use_whatsapp: false
+  whatsapp:
+    template_name: "art_studios_intro_v1"
+    language: "en"
+  email:
+    subject: "A quick idea for {{business_name}}'s workshops"
+    body_template_path: "templates/email/art_studios.html"
+
+salons:
+  use_whatsapp: false
+  whatsapp:
+    template_name: "salons_intro_v1"
+    language: "en"
+  email:
+    subject: "Helping {{business_name}} book more appointments"
+    body_template_path: "templates/email/salons.html"
+
+theatres:
+  use_whatsapp: false
+  whatsapp:
+    template_name: "theatres_intro_v1"
+    language: "en"
+  email:
+    subject: "A quick idea for {{business_name}}'s next show"
+    body_template_path: "templates/email/theatres.html"
+
+activity_centres:
+  use_whatsapp: false
+  whatsapp:
+    template_name: "activity_centres_intro_v1"
+    language: "en"
+  email:
+    subject: "Helping {{business_name}} fill more sessions"
+    body_template_path: "templates/email/activity_centres.html"

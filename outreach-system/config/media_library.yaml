@@ -1,0 +1,52 @@
+# Category -> approved outreach asset. Drop the actual file at this path
+# under content_library/ and it's picked up automatically - no code change.
+#
+# type: image | video | reel
+# For WhatsApp media-header templates, the file must ALSO be uploaded once via
+# Meta's Resumable Upload API to get a media handle referenced by the approved
+# template (see senders/whatsapp_sender.py) - this YAML just tells the system
+# which local file corresponds to which category for that upload step and for
+# email attachments/links.
+
+dance:
+  type: image
+  path: "content_library/images/dance/intro.jpg"
+yoga:
+  type: image
+  path: "content_library/images/yoga/intro.jpg"
+gym_fitness:
+  type: image
+  path: "content_library/images/gym_fitness/intro.jpg"
+photography:
+  type: image
+  path: "content_library/images/photography/intro.jpg"
+music_recording:
+  type: video
+  path: "content_library/videos/music_recording/intro.mp4"
+schools_colleges:
+  type: image
+  path: "content_library/images/schools_colleges/intro.jpg"
+sports:
+  type: image
+  path: "content_library/images/sports/intro.jpg"
+event_venues:
+  type: image
+  path: "content_library/images/event_venues/intro.jpg"
+cafes_restaurants:
+  type: image
+  path: "content_library/images/cafes_restaurants/intro.jpg"
+coworking:
+  type: image
+  path: "content_library/images/coworking/intro.jpg"
+art_studios:
+  type: image
+  path: "content_library/images/art_studios/intro.jpg"
+salons:
+  type: image
+  path: "content_library/images/salons/intro.jpg"
+theatres:
+  type: image
+  path: "content_library/images/theatres/intro.jpg"
+activity_centres:
+  type: image
+  path: "content_library/images/activity_centres/intro.jpg"
