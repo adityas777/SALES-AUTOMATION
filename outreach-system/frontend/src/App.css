@@ -129,8 +129,107 @@
 .main-content {
   flex: 1;
   overflow-y: auto;
-  padding: 36px 44px 60px;
+  padding: 0 44px 60px;
   background: var(--bg);
+  display: flex;
+  flex-direction: column;
+}
+
+/* ── Top Bar ── */
+.top-bar {
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  padding: 16px 0 12px;
+  position: sticky;
+  top: 0;
+  z-index: 50;
+  background: var(--bg);
+}
+
+.top-bar-spacer { flex: 1; }
+
+/* ── Voice Toggle Button ── */
+.voice-toggle-btn {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 6px 10px 6px 10px;
+  border-radius: 10px;
+  border: 1px solid var(--border);
+  background: var(--surface);
+  color: var(--text-muted);
+  cursor: pointer;
+  transition: all 0.25s ease;
+  font-size: 12.5px;
+  font-weight: 500;
+}
+
+.voice-toggle-btn:hover {
+  border-color: var(--border-strong);
+  background: var(--surface-2);
+  color: var(--text);
+}
+
+.voice-toggle-btn.active {
+  border-color: rgba(212, 175, 55, 0.4);
+  background: rgba(212, 175, 55, 0.08);
+  color: var(--gold-bright);
+}
+
+.voice-toggle-icon {
+  width: 26px;
+  height: 26px;
+  border-radius: 7px;
+  background: var(--surface-2);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all 0.2s;
+}
+
+.voice-toggle-btn.active .voice-toggle-icon {
+  background: rgba(212, 175, 55, 0.2);
+  color: var(--gold);
+  box-shadow: 0 0 10px rgba(212, 175, 55, 0.15);
+}
+
+.voice-toggle-label {
+  white-space: nowrap;
+}
+
+/* Toggle switch */
+.voice-toggle-switch {
+  width: 32px;
+  height: 18px;
+  border-radius: 9px;
+  background: var(--surface-3);
+  border: 1px solid var(--border);
+  position: relative;
+  transition: all 0.25s ease;
+  flex-shrink: 0;
+}
+
+.voice-toggle-switch.on {
+  background: var(--gold);
+  border-color: var(--gold);
+  box-shadow: 0 0 8px rgba(212, 175, 55, 0.4);
+}
+
+.voice-toggle-knob {
+  width: 12px;
+  height: 12px;
+  border-radius: 50%;
+  background: var(--text-muted);
+  position: absolute;
+  top: 2px;
+  left: 2px;
+  transition: all 0.25s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.voice-toggle-switch.on .voice-toggle-knob {
+  left: 16px;
+  background: #1a1305;
 }
 
 .page-header {
@@ -153,3 +252,4 @@
   max-width: 640px;
   line-height: 1.55;
 }
+

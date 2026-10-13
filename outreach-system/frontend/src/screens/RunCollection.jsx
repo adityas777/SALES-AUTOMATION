@@ -1,6 +1,7 @@
 import { useEffect, useState } from "react";
 import { api } from "../api.js";
 import { useRunTracker } from "../useRunTracker.js";
+import VoiceAssistantModal from "../components/VoiceAssistantModal.jsx";
 import "./RunCollection.css";
 
 function labelize(categoryKey) {
@@ -17,6 +18,7 @@ export default function RunCollection() {
   const [selectedCategories, setSelectedCategories] = useState([]);
   const [loadError, setLoadError] = useState("");
   const [startError, setStartError] = useState("");
+  const [isVoiceOpen, setIsVoiceOpen] = useState(false);
 
   const { status, isRunning, checkingActive, startRun, stopRun } = useRunTracker();
 
@@ -45,18 +47,47 @@ export default function RunCollection() {
     }
   }
 
+  async function handleVoiceRunStarted(voiceCity, voiceCategories) {
+    setCity(voiceCity);
+    setSelectedCategories(voiceCategories);
+    await startRun(voiceCity, voiceCategories);
+  }
+
   return (
     <div>
-      <div className="page-header">
-        <h1>Run collection</h1>
-        <p>
-          Manually trigger a collection run: finds businesses on Google Maps,
-          enriches, dedupes, pushes to Airtable, and sends first-touch
-          outreach automatically. Once started, this keeps running on the
-          server even if you navigate away or close this tab - come back any
-          time to check progress, or press Stop to end it early.
-        </p>
+      <div className="page-header" style={{ display: "flex", justifyContent: "space-between", alignItems: "flex-start" }}>
+        <div>
+          <h1>Run collection</h1>
+          <p>
+            Manually trigger a collection run: finds businesses on Google Maps,
+            enriches, dedupes, pushes to Airtable, and sends first-touch
+            outreach automatically.
+          </p>
+        </div>
+        <button
+          type="button"
+          className="btn"
+          style={{
+            background: "linear-gradient(135deg, #4f46e5, #7c3aed)",
+            color: "#ffffff",
+            display: "inline-flex",
+            alignItems: "center",
+            gap: 8,
+            padding: "10px 18px",
+            boxShadow: "0 4px 15px rgba(99, 102, 241, 0.35)",
+            whiteSpace: "nowrap",
+          }}
+          onClick={() => setIsVoiceOpen(true)}
+        >
+          <span>🎙️</span> Use Voice Agent
+        </button>
       </div>
+
+      <VoiceAssistantModal
+        isOpen={isVoiceOpen}
+        onClose={() => setIsVoiceOpen(false)}
+        onRunStarted={handleVoiceRunStarted}
+      />
 
       {loadError && <div className="banner banner-danger">{loadError}</div>}
       {startError && <div className="banner banner-danger">{startError}</div>}

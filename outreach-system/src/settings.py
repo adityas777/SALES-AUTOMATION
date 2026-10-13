@@ -15,7 +15,7 @@ class Settings:
     airtable_api_key: str = _env("AIRTABLE_API_KEY")
     airtable_base_id: str = _env("AIRTABLE_BASE_ID")
 
-    google_maps_api_key: str = _env("GOOGLE_MAPS_API_KEY")
+    google_maps_api_key: str = _env("GOOGLE_MAPS_API_KEY") or _env("GOOGLE_PLACES_API_KEY")
 
     whatsapp_token: str = _env("WHATSAPP_TOKEN")
     whatsapp_phone_number_id: str = _env("WHATSAPP_PHONE_NUMBER_ID")
@@ -34,6 +34,8 @@ class Settings:
     smtp_pass: str = _env("SMTP_PASS")
 
     slack_webhook_url: str = _env("SLACK_WEBHOOK_URL")
+
+    gnani_api_key: str = (_env("gnani") or _env("GNANI_API_KEY")).strip()
 
     app_env: str = _env("APP_ENV", "development")
     log_level: str = _env("LOG_LEVEL", "INFO")
