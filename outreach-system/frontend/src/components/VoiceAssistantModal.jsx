@@ -1,5 +1,5 @@
 import { useCallback, useEffect, useRef, useState } from "react";
-import { api } from "../api.js";
+import { api, API_BASE } from "../api.js";
 import { WavAudioRecorder } from "../utils/wavRecorder.js";
 import "./VoiceAssistantModal.css";
 
@@ -450,8 +450,7 @@ export default function VoiceAssistantModal({ isActive, onDeactivate, onRunStart
       const controller = new AbortController();
       const timeoutId = setTimeout(() => controller.abort(), 25000);
 
-      const hostname = window.location.hostname || "localhost";
-      const res = await fetch(`http://${hostname}:8000/api/voice/smart-summary`, {
+      const res = await fetch(`${API_BASE}/voice/smart-summary`, {
         signal: controller.signal,
       });
       clearTimeout(timeoutId);

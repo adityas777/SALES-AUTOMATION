@@ -1,5 +1,18 @@
-const hostname = typeof window !== "undefined" && window.location.hostname ? window.location.hostname : "localhost";
-const API_BASE = `http://${hostname}:8000/api`;
+const envApiUrl = import.meta.env.VITE_API_BASE_URL || import.meta.env.VITE_API_URL;
+
+function resolveApiBase() {
+  if (envApiUrl) {
+    const trimmed = envApiUrl.trim().replace(/\/+$/, "");
+    return trimmed.endsWith("/api") ? trimmed : `${trimmed}/api`;
+  }
+  const hostname =
+    typeof window !== "undefined" && window.location.hostname
+      ? window.location.hostname
+      : "localhost";
+  return `http://${hostname}:8000/api`;
+}
+
+export const API_BASE = resolveApiBase();
 
 async function request(path, options = {}) {
   const isFormData = options.body instanceof FormData;
