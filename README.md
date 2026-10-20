@@ -1,3 +1,4 @@
+#Depoloyed - https://sales-automation-beta.vercel.app/
 # Sales Automation — Local Business Outreach System
 
 An automated pipeline that finds local businesses on Google Maps, enriches and dedupes them, sends
@@ -19,6 +20,26 @@ The actual implementation lives in [`outreach-system/`](outreach-system/) — se
 - **Alerts**: Slack
 - **Backend**: Python / FastAPI
 - **Dashboard**: React / Vite
+
+## How to run in your system
+#Backend
+cd outreach-system
+.venv\Scripts\activate                                                                                                                                   
+uvicorn src.app:app --port 8000                                                                                                                          
+                                        
+
+#Frontend
+cd outreach-system\frontend
+npm run dev                                                                                                                                              
+
+#To test slack                     
+cd outreach-system
+python scripts/demo_simulate_reply.py "Life Fitness 24x7" "Yes, interested! Please call me about pricing."      
+
+
+
+python scripts/demo_simulate_reply.py "Gear Up Fitness Centre" "Not interested, please remove us"
+
 
 Everything — categories, cities, message templates, media, follow-up cadence — lives in
 `outreach-system/config/*.yaml`, editable without touching code.
